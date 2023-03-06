@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+body {
+	font-family: "맑은고딕";
+	text-decoration: none;
+	line-height: 1;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+a:link{
+	font-family: "맑은고딕";
+	font-size: 14px;
+	color: #333;
+	text-decoration: none;
+}
+
+a:visited{
+	font-family: "맑은고딕";
+	font-size: 14px;
+	color: #333;
+	text-decoration: none;
+}
+a:hover{
+	font-family: "맑은고딕";
+	text-decoration: none;
+	
+}
+
+a:active{
+	font-family: "맑은고딕";
+	font-size: 14px;
+	color: #333;
+	text-decoration: none;
+}

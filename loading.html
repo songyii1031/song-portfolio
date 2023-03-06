@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://kit.fontawesome.com/006c188c9c.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 300px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  margin: 0 0 10px;
+  overflow: hidden;
+  padding-right: 24px; /* Separate bars from container */
+}
+
+.progress-title-holder {
+  padding-bottom: 7px;
+  position: relative;
+  margin: 5px 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 400;
+  color: #2e2e2e;  
+}
+
+.progress-title {
+  z-index: 100;
+}
+
+.progress-number-wrapper {
+  width: 100%;
+  z-index: 10;
+}
+
+.progress-number-mark {
+  margin-bottom: 4px;
+  border-radius: 3px;
+  background-color: rgb(22,23,29);
+  padding: 0 8px;
+  position: absolute;
+  bottom: 0;   
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%); 
+} 
+
+.progress-number-wrapper,
+.progress-number-mark {
+  font-family: Open Sans, sans-serif;
+  font-size: 11px;
+  line-height: 24px;
+  height: 24px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: none;
+  color: #888;
+  background: #e7edf7;
+}
+
+.down-arrow {   /* 말풍선 밑 삼각형*/
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid #e7edf7;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);  
+}
+
+.progress-content-outter {   /*막대바*/
+  height: 12px;
+  background-color: #ffffff;
+}
+
+.progress-content {
+  height: 21px;
+  background-color: #879bb8;
+  opacity: 0.5;
+  width:0%; /* Initial value */
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+<!-- First bar -->
+<div class="progress-bar" data-percentage="99%">
+  <h4 class="progress-title-holder">
+    <span class="progress-title">HTML/CSS</span>
+    <span class="progress-number-wrapper">
+      <span class="progress-number-mark">
+        <span class="percent"></span>
+        <span class="down-arrow"></span>
+      </span>
+    </span>
+  </h4>
+  <div class="progress-content-outter">
+    <div class="progress-content"></div>
+  </div>
+</div> 
+<!-- Second bar -->
+<div class="progress-bar" data-percentage="75%">
+  <h4 class="progress-title-holder clearfix">
+    <span class="progress-title">jQuery</span>
+    <span class="progress-number-wrapper">
+      <span class="progress-number-mark">
+        <span class="percent"></span>
+        <span class="down-arrow"></span>
+      </span>
+    </span>
+  </h4>
+  <div class="progress-content-outter">
+    <div class="progress-content"></div>
+  </div>
+</div>
+<!-- Third bar -->
+<div class="progress-bar" data-percentage="60%">
+  <h4 class="progress-title-holder clearfix">
+    <span class="progress-title">JavaScript</span>
+    <span class="progress-number-wrapper">
+      <span class="progress-number-mark">
+        <span class="percent"></span>
+        <span class="down-arrow"></span>
+      </span>
+    </span>
+  </h4>
+  <div class="progress-content-outter">
+    <div class="progress-content"></div>
+  </div>
+</div> 
+
+<div class="progress-bar" data-percentage="90%">
+  <h4 class="progress-title-holder clearfix">
+    <span class="progress-title">Photoshop</span>
+    <span class="progress-number-wrapper">
+      <span class="progress-number-mark">
+        <span class="percent"></span>
+        <span class="down-arrow"></span>
+      </span>
+    </span>
+  </h4>
+  <div class="progress-content-outter">
+    <div class="progress-content"></div>
+  </div>
+</div> 
+
+
+</div>
+
+<script>
+
+	$(function(){
+	$(".progress-bar").each(function(){
+		$(this).find(".progress-content").animate({
+			width:$(this).attr("data-percentage")
+		},1500);
+
+		$(this).find(".progress-number-mark").animate(
+			{left:$(this).attr("data-percentage")},
+			{
+				duration : 1500,
+			    step: function(now,fx){     //step엔 인자를 두개 받는다. 
+				var data = Math.round(now);
+				$(this).find(".percent").html(data + "%");
+			}	
+			});
+		});
+	});
+	
+</script>
+</body>
+</html>
