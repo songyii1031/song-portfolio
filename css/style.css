@@ -64,8 +64,7 @@ header h1 {
 	line-height: 260px;
 	text-align: center;
 	color: rgba(0,0,0,.9);
-	opacity: 0.9;
-	z-index: 
+	opacity: 0.9; 
 }
 .main_baner > div > p{
 	position: absolute;
