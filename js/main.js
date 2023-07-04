@@ -1,3 +1,22 @@
+$(document).ready(function(){
+ 
+
+	$('#logo').find('h1').on('click', function(){
+		window.location.reload();
+	});
+	
+ 
+window.onload = function(){
+	setTimeout(function(){
+		scrollTo(0,0);
+	}, 100);
+ 
+}
+	
+		
+});
+
+
 $(function(){
 		setTimeout(function(){
 		$("#logo").addClass("on");
@@ -16,7 +35,7 @@ $(function(){
 
 
 		if(t >400){
-			$(".portfolio01").addClass("on2");
+			$(".portfolio01").addClass("on2"); 
 		}
 		if( t > 900){
 			$(".portfolio02").addClass("on3"); 
@@ -33,7 +52,7 @@ $(function(){
 
 //top menu
 	$(window).scroll(function(){
-		if($(window).scrollTop() > 900 ) {
+		if($(window).scrollTop() > 800 ) {
 			$(".effect7").addClass("back");
 			
 		}
@@ -125,7 +144,8 @@ $(function(){
 		});	 
 
 		$(".top").click(function(){
-			$("html,body").animate({scrollTop:0},1000)
+			$("html,body").animate({scrollTop:0},1000);
+			// window.location.reload();
 		});
 
 //해리포터 
@@ -169,10 +189,7 @@ $(function(){
 	});
 });
 
+// 2023.07 추가
 
-
-
-	
-		
 
 	

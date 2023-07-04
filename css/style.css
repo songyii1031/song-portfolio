@@ -995,3 +995,17 @@ header h1 {
 			margin: 20px 0 0 0;
 			font-weight: 300;
 		}
+
+
+		/* 2023.07 추가  */
+
+
+	    #scroll_progress_bar {
+			position: fixed;
+			top: 70px;
+			left: 0;
+			height: 3px;
+			background-color: #9596bf;
+			width: 0%;
+			z-index: 99;
+		}
